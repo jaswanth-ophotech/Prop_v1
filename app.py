@@ -35,6 +35,8 @@ from pdf2image import convert_from_bytes
 import io
 
 
+#import test
+
 # Try optional AI deps (app continues even if missing)
 try:
     from langchain_core.prompts import PromptTemplate
@@ -1268,5 +1270,6 @@ if page == "🤖 AI Analysis":
                 except Exception as e:
                     # Catch any remaining unexpected errors outside the core function
                     st.error(f"An unexpected error occurred: {str(e)}")
+
 
 
