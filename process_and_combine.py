@@ -26,7 +26,9 @@ def process_and_combine():
         "Nature of Assets",
         "Details URL",
         "Auction Notice URL",
-        "Source"
+        "Source",
+        "Notice_date"
+
     ]
 
     # Find latest files
@@ -63,7 +65,8 @@ def process_and_combine():
 
             # Add source column
             albion_df["Source"] = "Albion"
-            albion_df["Auction Notice URL"] = "URL 2_if available"  # Placeholder for Auction Notice URL    
+            albion_df["Auction Notice URL"] = "URL 2_if available"  # Placeholder for Auction Notice URL  
+            albion_df["Notice_date"] = "not available"  # Placeholder for Notice_date
 
             # Convert date columns to string format DD-MM-YYYY to preserve in CSV
             albion_df["_Auction date"] = albion_df["_Auction date"].apply(lambda x: x.strftime('%d-%m-%Y') if pd.notnull(x) else "-")
@@ -101,7 +104,9 @@ def process_and_combine():
                 "EMD Amount (PDF)": "EMD Amount",
                 "Nature of Assets (PDF)": "Nature of Assets",
                 "Details URL": "Details URL",
-                'Auction Notice URL': 'Auction Notice URL'
+                'Auction Notice URL': 'Auction Notice URL',
+                'Date of Issue of Auction Notice': 'Notice_date'
+
             })
 
             # Add source column
